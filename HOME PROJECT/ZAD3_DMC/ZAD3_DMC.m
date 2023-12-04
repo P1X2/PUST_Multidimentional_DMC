@@ -74,30 +74,59 @@ for j=1:D-1
 end
 
 
+%% macierz PSI
+
+MIMO_PSI = cell(N, N);
+PSI_cell = diag([psi1 psi2 psi3]);
+
+for i=1:N %kol
+    for j=1:N % wiersz
+        if i == j
+            MIMO_PSI{j,i} = PSI_cell;
+        else
+            MIMO_PSI{j,i} = zeros(3, 3);
+        end
+    end
+end
+
+PSI = [];
+for j=1:N
+    kol_matrix = [];
+    for i=1:N
+        kol_matrix = [kol_matrix; MIMO_PSI{i,j}];
+    end
+    PSI = [PSI,kol_matrix];
+end
 
 
 
-% 
-% % macierz PSI
-% PSI = cell(N, N);
-% PSI_cell = diag([psi1 psi2 psi3]);
-% 
-% % for i=1:N
-% %     for j=1:N
-% %         PSI{}
-% % 
-% % 
-% %     end
-% % end
-% 
-% 
-% 
-% 
-% % macierz LAMBDA
-% LAMBDA = cell(Nu, Nu);
-% cell = diag([lambda1 lambda2 lambda3 lambda4]);
-% 
-% 
+
+ 
+%% macierz LAMBDA
+MIMO_LAMBDA = cell(Nu, Nu);
+LAMBDA_cell = diag([lambda1 lambda2 lambda3 lambda4]);
+
+for i=1:Nu %kol
+    for j=1:Nu % wiersz
+        if i == j
+            MIMO_LAMBDA{j,i} = LAMBDA_cell;
+        else
+            MIMO_LAMBDA{j,i} = zeros(4, 4);
+        end
+    end
+end
+
+LAMBDA = [];
+for j=1:Nu
+    kol_matrix = [];
+    for i=1:Nu
+        kol_matrix = [kol_matrix; MIMO_LAMBDA{i,j}];
+    end
+    LAMBDA = [LAMBDA,kol_matrix];
+end
+
+
+
 % K = (M'*M + lambda*eye(Nu))^(-1) * M';
 
 %%
