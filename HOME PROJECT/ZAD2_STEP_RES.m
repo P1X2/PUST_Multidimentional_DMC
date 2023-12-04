@@ -4,7 +4,7 @@ clear all;
 steps = 200;
 step_responses = cell(3, 4);
 
-s = cell(1, steps);
+s = zeros(1, steps);
 
 for i=1:4
 
@@ -58,7 +58,7 @@ end
 
 for j=1:steps
 
-    s{j} = [ step_responses{1,1}(j) step_responses{1,2}(j) step_responses{1,3}(j) step_responses{1,4}(j);
+    s(j) = [ step_responses{1,1}(j) step_responses{1,2}(j) step_responses{1,3}(j) step_responses{1,4}(j);
         step_responses{2,1}(j) step_responses{2,2}(j) step_responses{2,3}(j) step_responses{2,4}(j);
         step_responses{3,1}(j) step_responses{3,2}(j) step_responses{3,3}(j) step_responses{3,4}(j)];
                 

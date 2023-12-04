@@ -65,12 +65,12 @@ for j=1:D-1
 end
 
 Mp = [];
-for j=1:D-1
+for i=1:D-1
     kol_matrix = [];
-    for i=1:N
-        kol_matrix = [kol_matrix; MIMO_MP{i,j}];
+    for j=1:N
+        kol_matrix = [kol_matrix; MIMO_Mp{j,i}];
     end
-    Mp = [Mp,kol_matrix];
+    Mp = [M,kol_matrix];
 end
 
 
