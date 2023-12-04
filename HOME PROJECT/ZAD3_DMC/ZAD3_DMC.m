@@ -1,4 +1,5 @@
 clear all;
+%% !!!!! info dla ludzi w pilnej potrzebie - strp_res_matrix.mat zawiera w sobie macierz komórkową s odpowiedzi skokowych obiektu z zad2
 load("strp_res_matrix.mat");
 
 %% wyznaczanie macierzy s + horyzonty
@@ -6,24 +7,24 @@ load("strp_res_matrix.mat");
 nu = 4;
 ny = 3;
 
-D = 180; % horyzont dyn 
-N = 20; % horyzont predykcji
+D = 190; % horyzont dyn 
+N = 40; % horyzont predykcji
 Nu = 10; % horyzint sterowania
-lambda = 20;
+
 
 % "waznosc" danego wyjscia
 psi1 = 1;
 psi2 = 1;
-psi3 = 100;
+psi3 = 10;
 
 % lambda to lambda
-lambda1 = 10;
+lambda1 = 1;
 lambda2 = 10;
 lambda3 = 10;
 lambda4 = 10;
 
 
-%% MACIERZE |MIMIO|; 
+%% MACIERZE |MIMO|; 
 %% macierz M
 CELL_M=cell(N,Nu);
 pom1 = 0;

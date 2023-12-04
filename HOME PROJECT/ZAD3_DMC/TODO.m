@@ -1,0 +1,1 @@
+wystroic tego klocka - najpierw dobrac horyzonty[zad4], potem dobrac lambdy i psi[zad5]
