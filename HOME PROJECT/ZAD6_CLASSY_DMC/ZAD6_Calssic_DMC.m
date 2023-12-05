@@ -1,4 +1,5 @@
-clear all;
+clear all; 
+%% DO ZROBIENIA Aasas
 %% !!!!! info dla ludzi w pilnej potrzebie - strp_res_matrix.mat zawiera w sobie macierz komórkową s odpowiedzi skokowych obiektu z zad2
 load("strp_res_matrix.mat");
 
